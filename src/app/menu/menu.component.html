@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container" >
+<mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
     class="sidenav"
@@ -6,13 +6,12 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
-    
   >
-    <mat-toolbar >Menu</mat-toolbar>
+    <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item routerLink="/home">Inicio</a>
+      <a mat-list-item href="#">Ingresar</a>
+      <a mat-list-item href="#">Registrarse</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -28,10 +27,9 @@
       </button>
       <span>Distribuidora SanCor</span>
       <span class="spacer"></span>
-      
-      <a  ><mat-icon aria-hidden="false" aria-label="Example home icon">login</mat-icon>Login</a>
-      <a href="#">Link 2</a>
-      <a  href="#">Link 3</a>
+      <a routerLink="/home">Inicio</a>
+      <a routerLink="/login">Ingresar</a>
+      <a href="#">Registrarse</a>
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>

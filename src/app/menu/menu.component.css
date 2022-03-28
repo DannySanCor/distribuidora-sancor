@@ -10,14 +10,14 @@
 
 .sidenav .mat-toolbar {
   background: inherit;
-  background-color:#e80b0b ;
+  background-color:#B92326 ;
 }
 
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color:#e80b0b ;
+  background-color:#B92326 ;
 }
 .spacer {
   flex: 1 1 auto;
