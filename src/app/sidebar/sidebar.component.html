@@ -1,0 +1,138 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span class="spacer"></span>
+      <span>Distribuidora SanCor</span>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<nav class="sidebar" [ngClass]="toggleSwitch == true ? '' : 'close'">
+  <header>
+    <div class="image-text">
+      <span [ngClass]="toggleSwitch == true ? 'imageOpen' : 'imageClose'">
+        <img src="../../assets/logo.gif" alt="" />
+      </span>
+
+      <div class="text logo-text">
+        <span class="name">DannySanCor</span>
+        <span class="profession">Sup Admin</span>
+      </div>
+    </div>
+
+    <i
+      class="bx toggle"
+      [ngClass]="toggleSwitch == true ? 'bx-chevron-right' : 'bx-chevron-left'"
+      (click)="changeValues()"
+    ></i>
+  </header>
+
+  <div class="menu-bar">
+    <div class="menu">
+      <!--<li class="search-box">
+                <i class='bx bx-search icon'></i>
+                <input type="text" placeholder="Search...">
+            </li>
+            -->
+      <ul class="menu-links">
+        <li class="nav-link">
+          <a routerLink="/home" routerLinkActive="active">
+            <i class="bx bx-home-alt icon"></i>
+            <span class="text nav-text">Inicio</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a href="#">
+            <i class="bx bx-bar-chart-alt-2 icon"></i>
+            <span class="text nav-text">Graficas</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a href="#">
+            <i class="bx bx-package icon"></i>
+            <span class="text nav-text">Pedidos</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a href="#">
+            <i class="bx bx-cog icon"></i>
+            <span class="text nav-text">Configuraciones</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a routerLink="/login" routerLinkActive="active">
+            <i class="bx bx-log-in icon"></i>
+            <span class="text nav-text">Ingresar</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a routerLink="/registro" routerLinkActive="active">
+            <i class="bx bxs-business icon"></i>
+            <span class="text nav-text">Registrate</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a href="#">
+            <i class="bx bx-user-plus icon"></i>
+            <span class="text nav-text">Registrar Usuario</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="bottom-content">
+      <li class="">
+        <a href="#">
+          <i class="bx bx-log-out icon"></i>
+          <span class="text nav-text">Salir</span>
+        </a>
+      </li>
+
+      <!--<li class="mode">
+                <div class="sun-moon">
+                    <i class='bx bx-moon icon moon'></i>
+                    <i class='bx bx-sun icon sun'></i>
+                </div>
+                <span class="mode-text text" >{{modeText}}</span>
+
+                <div [ngClass]=" darkMode == true ? 'toggle-switch' : 'toggle-switch switch' " class="" (click)="modeSwitch()">
+                    <span class="switch"></span>
+                </div>
+            </li>-->
+      <footer *ngIf="toggleSwitch">
+        <p>
+          {{ footerText }}
+          <br />
+          contacto-3531005410
+        </p>
+      </footer>
+    </div>
+  </div>
+</nav>
+
+<!---->
+<table style="width: 100%">
+  <tr>
+    <td [ngClass]="toggleSwitch == true ? 'spaceRouter' : 'spaceRouter close'">
+      <div
+        [ngClass]="toggleSwitch == true ? 'sideSpace' : 'sideSpace close'"
+      ></div>
+    </td>
+    <td style="width: auto; text-align: center">
+      <div style="margin-left: auto; margin-right: auto; margin-top: 70px">
+        <router-outlet></router-outlet>
+      </div>
+      <!--<div style="background-color: #cfd0d3; position: fixed; bottom: 0; z-index: 999999; width:100%; ">
+        <app-footer></app-footer>
+    </div>-->
+    </td>
+  </tr>
+</table>
+
+<!--
+<div [ngClass]=" toggleSwitch == true ? 'routerComponentOpen' : 'routerComponentClose' " ></div>
+-->
